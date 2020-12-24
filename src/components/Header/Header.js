@@ -4,10 +4,13 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
+    <Nav.Link href="#counselors">Counselors Page</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>
 )
+
+// <Nav.Link href="#counselor-index">All Counselors</Nav.Link>
 
 const unauthenticatedOptions = (
   <Fragment>
