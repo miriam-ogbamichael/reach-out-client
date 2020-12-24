@@ -9,6 +9,7 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
+import CounselorIndex from './components/Counselors/CounselorIndex'
 
 class App extends Component {
   constructor () {
@@ -19,18 +20,26 @@ class App extends Component {
     }
   }
 
+  // This will be used on sign in
   setUser = user => this.setState({ user })
 
+  // clearUser will set the `user` state to null
+  // This will be used on sign out
   clearUser = () => this.setState({ user: null })
 
   deleteAlert = (id) => {
+    // Removed message alert object from state based on an ID value
     this.setState((state) => {
       return { msgAlerts: state.msgAlerts.filter(msg => msg.id !== id) }
     })
   }
 
+  // Displays a message alert
   msgAlert = ({ heading, message, variant }) => {
+    // Create a unique ID for the message alert
     const id = uuid()
+    // Adds the message alert object to the current array of message alerts
+    // stored on `App`'s stat
     this.setState((state) => {
       return { msgAlerts: [...state.msgAlerts, { heading, message, variant, id }] }
     })
@@ -65,6 +74,12 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
+          <AuthenticatedRoute user={user} path='/counselors' render={() => (
+            <CounselorIndex
+              user={user}
+              msgAlert={this.msgAlert}
+            />
+          )}/>
         </main>
       </Fragment>
     )
