@@ -10,6 +10,9 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import CounselorIndex from './components/Counselors/CounselorIndex'
+import CounselorCreate from './components/Counselors/CounselorCreate'
+import CounselorUpdate from './components/Counselors/CounselorUpdate'
+import CounselorShow from './components/Counselors/CounselorShow'
 
 class App extends Component {
   constructor () {
@@ -62,23 +65,51 @@ class App extends Component {
           />
         ))}
         <main className="container">
+
+          {/* Unauthenticated Sign Up Route: */}
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
+
+          {/* Unauthenticated Sign In Route: */}
           <Route path='/sign-in' render={() => (
             <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
-            <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+
+          {/* Authenticated Sign Out Route */}
+          <AuthenticatedRoute exact path='/sign-out' user={this.state.user} render={() => (
+            <SignOut msgAlert={this.msgAlert} user={this.state.user} clearUser={this.clearUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
+
+          {/* Authenticated Change Password Route: */}
+          <AuthenticatedRoute exact path='/change-password' user={this.state.user} render={() => (
+            <ChangePassword msgAlert={this.msgAlert} user={this.state.user} />
           )} />
-          <AuthenticatedRoute user={user} path='/counselors' render={() => (
+
+          {/* Authenticated Counselor Show Route: */}
+          <AuthenticatedRoute exact path='/show-counselor/:counselorId' user={this.state.user} render={({ match }) => (
+            <CounselorShow msgAlert={this.msgAlert} user={this.state.user} match={match} />
+          )}/>
+
+          {/* Authenticated Counselor Index Route: */}
+          <AuthenticatedRoute path='/counselors' user={this.state.user} render={() => (
             <CounselorIndex
-              user={user}
               msgAlert={this.msgAlert}
+              user={this.state.user}
             />
+          )}/>
+
+          {/* Authenticated Counselor Create Route: */}
+          <AuthenticatedRoute exact path='/create-counselors' user={this.state.user} render={() => (
+            <CounselorCreate
+              msgAlert={this.msgAlert}
+              user={this.state.user}
+            />
+          )}/>
+
+          {/* Authenticated Counselor Update Route: */}
+          <AuthenticatedRoute path='/update-counselor/:counselorId/' user={this.state.user} render={({ match }) => (
+            <CounselorUpdate msgAlert={this.msgAlert} user={this.state.user} match={match}/>
           )}/>
         </main>
       </Fragment>
