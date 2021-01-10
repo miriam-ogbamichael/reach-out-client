@@ -18,30 +18,6 @@ class CounselorCreate extends Component {
     }
   }
 
-  // componentDidMount () {
-  //   const { user, msgAlert } = this.props
-  //
-  //   createCounselors(this.state.counselor, user)
-  //     .then(res => {
-  //       console.log(res)
-  //       this.setState({ counselor: res.data.counselor._id })
-  //     })
-  //     .then(() => {
-  //       msgAlert({
-  //         heading: 'Counselor Create Success!',
-  //         message: 'Create a counselor here!',
-  //         variant: 'success'
-  //       })
-  //     })
-  //     .catch(err => {
-  //       msgAlert({
-  //         heading: 'Counselor Create Failed',
-  //         message: 'Failed with error: ' + err.message,
-  //         variant: 'danger'
-  //       })
-  //     })
-  // }
-
   handleSubmit = (event) => {
     event.preventDefault()
 
