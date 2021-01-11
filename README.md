@@ -39,9 +39,9 @@ I began by brainstorming an idea to combine mental health and tech. Reach Out is
 - Adding `Img` of counselors to display when users `CRUD` on counselors
 
 
-### API Routes
+## API Routes
 
-## Counselor Routes
+### Counselor Routes
 
 | Verb   | URI Pattern              | Controller#Action    |
 |:-------|:----------------         |:------------------   |
@@ -53,7 +53,7 @@ I began by brainstorming an idea to combine mental health and tech. Reach Out is
 
 
 
-## Auth Routes
+### Auth Routes
 
 | Verb   | URI Pattern        | Controller#Action          |
 |:-------|:----------------   |:------------------         |
@@ -66,6 +66,8 @@ I began by brainstorming an idea to combine mental health and tech. Reach Out is
 
 ### ERD and Wireframs
 
-![Reach Out ERD](https://docs.google.com/document/d/1hs9TZIhWu1fxZ5eOaOgoginVn3-xQQzq-DCaqP-EkFg/edit?usp=sharing)
+- Reach Out ERD:
+(https://docs.google.com/document/d/1hs9TZIhWu1fxZ5eOaOgoginVn3-xQQzq-DCaqP-EkFg/edit?usp=sharing)
 
-![Reach Out Wireframs](https://docs.google.com/document/d/1JG2E0nUtYsjZ-Wb7NCXP2lNDMb4-5iFc4i8pJjHX3-4/edit?usp=sharing)
+- Reach Out Wireframs:
+(https://docs.google.com/document/d/1JG2E0nUtYsjZ-Wb7NCXP2lNDMb4-5iFc4i8pJjHX3-4/edit?usp=sharing)
