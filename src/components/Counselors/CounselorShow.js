@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 import { deleteCounselor, showCounselor } from '../../api/counselors'
@@ -82,4 +82,4 @@ class CounselorShow extends Component {
   }
 }
 
-export default CounselorShow
+export default withRouter(CounselorShow)

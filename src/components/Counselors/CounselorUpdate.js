@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 import { showCounselor, updateCounselor } from '../../api/counselors'
 
@@ -98,4 +98,4 @@ class CounselorUpdate extends Component {
   }
 }
 
-export default CounselorUpdate
+export default withRouter(CounselorUpdate)
