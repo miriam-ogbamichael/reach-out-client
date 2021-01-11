@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Card, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 
 import { indexCounselors } from '../../api/counselors'
@@ -62,7 +62,6 @@ class CounselorIndex extends Component {
                   <Card.Title>{counselor.name}</Card.Title>
                   <Card.Text>{counselor.location}</Card.Text>
                   <Link to={`/show-counselor/${counselor.id}/`}><ButtonToolbar className="justify-content-center">View Counselor</ButtonToolbar></Link>
-                  <Link to={`/update-counselor/${counselor.id}/`}><ButtonToolbar className="justify-content-center">Update Counselor</ButtonToolbar></Link>
                 </Card.Body>
               </Fragment>
             ))}
@@ -73,4 +72,4 @@ class CounselorIndex extends Component {
   }
 }
 
-export default CounselorIndex
+export default withRouter(CounselorIndex)
